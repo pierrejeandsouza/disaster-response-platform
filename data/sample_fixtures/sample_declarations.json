@@ -1,0 +1,4 @@
+[
+{"femaDeclarationString":"FM-5672-AK","disasterNumber":5672,"state":"AK","declarationType":"FM","declarationDate":"2026-08-18T00:00:00.000Z","fyDeclared":2026,"incidentType":"Fire","declarationTitle":"MUKLUK FIRE","ihProgramDeclared":false,"iaProgramDeclared":false,"paProgramDeclared":true,"hmProgramDeclared":false,"fipsStateCode":"02","fipsCountyCode":"240","designatedArea":"Southeast Fairbanks (Census Area)"},
+{"femaDeclarationString":"DR-4393-NC","disasterNumber":4393,"state":"NC","declarationType":"DR","declarationDate":"2018-09-14T00:00:00.000Z","fyDeclared":2018,"incidentType":"Hurricane","declarationTitle":"HURRICANE FLORENCE","ihProgramDeclared":true,"iaProgramDeclared":true,"paProgramDeclared":true,"hmProgramDeclared":true,"fipsStateCode":"37","fipsCountyCode":"019","designatedArea":"Brunswick (County)"}
+]

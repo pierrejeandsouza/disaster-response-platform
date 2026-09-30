@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disaster coordination console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="console-header">
+        <div class="header-left">
+            <span class="live-dot"></span>
+            <h1>Disaster coordination console</h1>
+        </div>
+        <button id="refreshBtn" class="text-btn">Sync now</button>
+    </header>
+
+    <section class="telemetry-strip" id="summaryGrid">
+        <!-- Filled in by script.js -->
+    </section>
+
+    <main class="board-grid">
+        <section class="panel panel-hero">
+            <h2>Incident board</h2>
+            <p class="panel-sub">Requests waiting on a unit, most urgent first</p>
+            <div id="rankedList" class="list-container">
+                <p class="empty-state">Loading...</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Units</h2>
+            <p class="panel-sub">Current status of every registered resource</p>
+            <div id="resourcesList" class="list-container">
+                <p class="empty-state">Loading...</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Log</h2>
+            <p class="panel-sub">Every request, resolved or not</p>
+            <div id="requestsList" class="list-container">
+                <p class="empty-state">Loading...</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="intake-grid">
+        <form id="requestForm" class="intake-form">
+            <h2>Log new request</h2>
+            <label>Location
+                <input type="text" name="location" placeholder="Area A" required>
+            </label>
+            <label>Type
+                <input type="text" name="request_type" placeholder="Medical, food, rescue, shelter" required>
+            </label>
+            <label>People affected
+                <input type="number" name="people_affected" min="1" required>
+            </label>
+            <label>Severity
+                <select name="severity" required>
+                    <option value="">Select severity</option>
+                    <option value="LOW">Low</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="HIGH">High</option>
+                    <option value="CRITICAL">Critical</option>
+                </select>
+            </label>
+            <label>Description
+                <textarea name="description" placeholder="What's happening"></textarea>
+            </label>
+            <button type="submit">Submit request</button>
+            <p id="requestFormStatus" class="form-status"></p>
+        </form>
+
+        <form id="resourceForm" class="intake-form">
+            <h2>Register unit</h2>
+            <label>Name
+                <input type="text" name="name" placeholder="Ambulance 3" required>
+            </label>
+            <label>Type
+                <input type="text" name="resource_type" placeholder="Medical, food, rescue, shelter" required>
+            </label>
+            <label>Location
+                <input type="text" name="location" placeholder="Area B" required>
+            </label>
+            <label>Capacity
+                <input type="number" name="capacity" min="1" required>
+            </label>
+            <button type="submit">Register unit</button>
+            <p id="resourceFormStatus" class="form-status"></p>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
